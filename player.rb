@@ -9,9 +9,13 @@ class Player
     @lives -= 1
   end
 
+  def is_dead
+    @lives == 0
+  end
+
   def new_question
     new_question = Question.new
-    puts "#{name}: What does #{new_question.num1} plus #{new_question.num2} equal?"
+    new_question.ask_question(name)
     print '> '
     @userchoice = $stdin.gets.chomp
     if new_question.check_answer?(@userchoice.to_i)

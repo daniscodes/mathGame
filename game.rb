@@ -25,9 +25,9 @@ def winner(player)
 end
 
 def check_score
-  if @player_1.lives == 0
+  if @player_1.is_dead
     winner(player_2)
-  elsif @player_2.lives == 0
+  elsif @player_2.is_dead
     winner(player_1)
   end
 end
